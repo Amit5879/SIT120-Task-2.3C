@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Q2: Vue 3 Methods</title>
+</head>
+<body>
+  <div id="app">
+    <div class="navbar">
+        <a href="Home.html">Home</a>
+        <a href="q1.html">Q1</a>
+        <a href="q2.html">Q2</a>
+        <a href="q3.html">Q3</a>
+        <a href="q4.html">Q4</a>
+        <a href="q5.html">Q5</a>
+        <a href="q6.html">Q6</a>
+        <a href="q7.html">Q7</a>
+        <a href="q8.html">Q8</a>
+        <a href="q9.html">Q9</a>
+        <a href="q10.html">Q10</a>
+        <a href="q11.html">Q11</a>
+      </div>
+  <!-- Heading-->
+    <h1>Q2: Vue 3 Methods</h1>
+
+    <!-- List of Vue 3 Methods -->
+    <ul>
+      <li v-for="(method, index) in methods" :key="index">{{ method }}</li>
+    </ul>
+
+    <!-- Example of Using a Vue Method -->
+    <button @click="sayHello">Click me to call 'sayHello' method</button>
+  </div>
+
+  <p>The 'sayHello' method in this example triggers an alert dialog with the message 'Hello, Vue!' when you click the button. It showcases how Vue methods can encapsulate actions or behavior that can be invoked in response to user interactions or other events within a Vue application.</p>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.2.0/dist/vue.global.prod.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          methods: [
+            'sayHello',
+            // Add other method names here
+          ],
+        };
+      },
+      methods: {
+        sayHello() {
+          alert('Hello, Vue! This alert is triggered by the "sayHello" method.');
+        },
+        // Define other methods here
+      },
+    });
+
+    app.mount('#app');
+  </script>
+</body>
+</html>
